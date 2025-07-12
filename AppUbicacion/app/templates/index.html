@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Provincias de Ecuador</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f4f7;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .server-info {
+            text-align: center;
+            color: #888;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        iframe {
+            display: block;
+            margin: 0 auto 30px auto;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        li {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        li strong {
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+
+        li span {
+            display: block;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Provincias de Ecuador</h1>
+    <p class="server-info">Respuesta de: {{ server_name }}</p>
+
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1BIzIYgg-deLq3I7qVohkJ4zJ9WPZHq8&ehbc=2E312F" width="640" height="480"></iframe>
+
+    <ul>
+        {% for p in provincias %}
+        <li>
+            <strong>{{ p.nombre }}</strong>
+            <span>Capital: {{ p.capital }}</span>
+            <span>Área: {{ p.area_km2 }} km²</span>
+            <span>Población: {{ p.poblacion_estimada }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <footer>
+        Proyecto de balanceo de carga con Flask y Docker — {{ server_name }}
+    </footer>
+</body>
+</html>

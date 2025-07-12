@@ -1,75 +1,61 @@
-# 🌎 Balanceador de carga con Docker, Flask y Nginx — Provincias de Ecuador
+# Balanceador de carga con Docker, Flask y Nginx — Provincias de Ecuador
 
-Este proyecto implementa un balanceador de carga usando **Nginx** y **Docker**, distribuyendo tráfico entre dos aplicaciones Flask que muestran un mapa del Ecuador y datos de sus provincias desde una base de datos MySQL.
-
----
-
-## 🚀 Tecnologías usadas
-
-- 🐳 **Docker & Docker Compose**
-- 🔥 **Flask (Python)**
-- 🌐 **Nginx**
-- 🐬 **MySQL**
-- 🗺 **Google My Maps**
+Este proyecto implementa un balanceador de carga usando Nginx y Docker, distribuyendo tráfico entre dos aplicaciones Flask que muestran un mapa del Ecuador y datos de sus provincias desde una base de datos MySQL.
 
 ---
 
-## 🗺 Funcionalidades
+## Tecnologías usadas
 
-✅ Dos servidores Flask independientes mostrando:
+- **Docker & Docker Compose**
+- **Flask (Python)**
+- **Nginx**
+- **MySQL**
+- **Google My Maps**
+
+---
+
+## Funcionalidades
+
+Dos servidores Flask independientes mostrando:
 - Mapa interactivo de Ecuador (Google Maps embebido).
 - Lista de provincias con nombre, capital, área y población.
 
-✅ Base de datos centralizada en MySQL.
+Base de datos centralizada en MySQL.
 
-✅ Balanceo de carga con Nginx, enviando las peticiones de forma alternada a ambos servidores.
+Balanceo de carga con Nginx, enviando las peticiones de forma alternada a ambos servidores.
 
-✅ Visualización clara del servidor que respondió en cada petición.
-
----
-
-## ⚙️ Arquitectura
-
-```
-[Usuario]
-    ↓
-[NGINX - Balanceador]
-    ↓         ↓
-[Flask App 1]  [Flask App 2]
-        ↓
-   [MySQL DB]
-```
+Visualización clara del servidor que respondió en cada petición.
 
 ---
 
-## 💻 Instalación
+## Instalación
 
-1️⃣ Clona el repositorio
+1️. Clona el repositorio
 
 ```bash
 git clone https://github.com/tu-usuario/tu-repo.git
 cd tu-repo
 ```
 
-2️⃣ Copia tu archivo SQL (`provincias.sql`) en la raíz si no lo has importado aún.
+2️. Copia tu archivo SQL (`provincias.sql`) en la raíz si no lo has importado aún.
 
-3️⃣ Levanta los servicios
+3️. Levanta los servicios
 
 ```bash
 docker-compose up --build
 ```
 
-4️⃣ Abre tu navegador y visita:
+4️. Abre tu navegador y visita:
 
 ```
 http://localhost
 ```
 
-💡 Refresca la página varias veces para ver cómo cambia entre **Servidor 1** y **Servidor 2**.
+Refresca la página varias veces para ver cómo cambia entre **Servidor 1** y **Servidor 2**.
 
 ---
 
-## 🗄 Archivos principales
+## Archivos principales
 
 - `app/app.py` — Código Flask
 - `app/templates/index.html` — Plantilla HTML
@@ -79,7 +65,7 @@ http://localhost
 
 ---
 
-## 🛡️ Notas importantes
+## Notas importantes
 
 - Este proyecto utiliza el servidor de desarrollo Flask (no apto para producción).
 - El puerto de MySQL (`3306`) queda mapeado por si quieres conectarte externamente.
@@ -87,20 +73,25 @@ http://localhost
 
 ---
 
-## 📸 Capturas (opcional)
+## Capturas (opcional)
 
 Puedes agregar aquí imágenes para mostrar:
 - Diagrama de arquitectura
+  
+  <img width="233" height="293" alt="image" src="https://github.com/user-attachments/assets/7873c636-6a24-4f73-8ae2-d16fe0564716" />
+
+
 - Pantalla principal con mapa
+  
+  <img width="623" height="825" alt="image" src="https://github.com/user-attachments/assets/4afb6c5f-a5a9-422c-849e-418a7c0320fc" />
+
+  
 - Balanceo (pantallas mostrando Servidor 1 y 2)
-
+  
+    <img width="832" height="412" alt="image" src="https://github.com/user-attachments/assets/a9ef2efa-4b5b-4599-acbb-5d91c734f028" />
+    
 ---
 
-## 👨‍💻 Autor
+## Autor
 
-- **Tu Nombre**
-- **[Tu correo o perfil GitHub](https://github.com/tu-usuario)**
-
----
-
-### ⭐ Si te sirvió o quieres apoyarme, dale una ⭐ al repo.
+- **Isaac Quinapallo**
